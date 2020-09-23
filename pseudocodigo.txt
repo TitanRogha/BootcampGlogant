@@ -1,0 +1,29 @@
+Pseudocódigo general Cajero automático
+
+Escribir "Bienvenido al Banco"
+Escribir "Inserte Tarjeta"
+Leer tarjeta
+Elegir la operacion a realizar, (operacion)
+Escribir "Consulta saldo"
+Escribir "Retiro de saldo"
+Escribir "Transferencia de saldo"
+Leer operacion
+si operacion=1 Escribir "Ingrese su contraseña"
+Leer contraseña
+Si contraseseña es valido 
+Escribir "Tu saldo ahora es:", saldo 
+si operacion=2 Leer contraseña
+Si contraseseña es valido 
+Escribir "Ingrese el monto a retirar" (cantidad)
+Calcular el nuevo saldo: saldo=saldo-cantidad
+Permitir retiro
+si operacion=3 Escribir "Ingrese su contraseña"
+Leer contraseña
+Si contraseseña es valido 
+Escribir "Ingrese la cuenta destino" (cuenta)
+Leer cuenta
+si cuenta es valido
+Escribir "Ingrese el monto a transferir (monto)
+Calcular el nuevo saldo= saldo=saldo-monto
+Realizar transferencia
+Fin Proceso

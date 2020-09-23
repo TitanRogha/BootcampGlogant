@@ -1,0 +1,26 @@
+https://www.espn.com/?src=com
+
+Crear cuenta
+
+#sideLogin-left-rail h1 + button(Sign Up Button on Main Page)
+[name="firstName"] (First Name input on form)
+[name="lastName"] (Last Name input on form)
+[name="email"] (Email Address input on form)
+[name="newPassword"] (Password input on form)
+div button:only-child (Sign Up Button on Form)
+
+Iniciar Sesión
+
+#sideLogin-left-rail button:last-child (Sign In Button on Main Page)
+.field-username-email label span input:only-child (User Name or Email Addres Input on form)
+.field-password label span input:only-child (Password Input on form)
+div button:only-child (Sign In Button on Form
+
+
+Eliminar cuenta
+
+#global-user-trigger (Account Icon on Main Page)
+a~div div .account-management li:nth-child(3) a (ESP Profile Option on Account Management)
+#cancel-account (Delete Option on Upate Profile Form)
+section .btn-group button:first-child (Accept terms Button)
+
