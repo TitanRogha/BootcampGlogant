@@ -12,18 +12,16 @@ import java.util.Set;
 
 public class EspnHomePage extends BasePage{
 
-    public EspnHomePage(WebDriver driver) throws InterruptedException {
+    public EspnHomePage(WebDriver driver)  {
         super(driver);
         driver.get("https://www.espn.com/?src=com&adblock=true");
-
-        By item = By.id("google_ads_iframe_/21783347309/espn.com/frontpage/index_1");
+        By iframe = By.id("google_ads_iframe_/21783347309/espn.com/frontpage/index_1");
         WebDriverWait wait = new WebDriverWait(driver, 20);
-        wait.until(ExpectedConditions.presenceOfElementLocated(item));
+        wait.until(ExpectedConditions.presenceOfElementLocated(iframe));
+        wait.until(ExpectedConditions.elementToBeClickable(loginButtonHomePage));
         driver.switchTo().frame("google_ads_iframe_/21783347309/espn.com/frontpage/index_1");
         closeFrame.click();
         driver.switchTo().defaultContent();
-
-
     }
 
     @FindBy(css = "#sideLogin-left-rail button:last-child")
@@ -32,12 +30,7 @@ public class EspnHomePage extends BasePage{
     @FindBy(css= "#overlaybg p a")
     private WebElement closeFrame;
 
-    @FindBy(id= "#google_ads_iframe_/21783347309/espn.com/frontpage/index_1")
-    private WebElement iframeGoogleAds;
-
-
-
-    public LoginPage login() {
+    public LoginPage searchLogin()  {
         loginButtonHomePage.click();
         return new LoginPage(getDriver());
     }

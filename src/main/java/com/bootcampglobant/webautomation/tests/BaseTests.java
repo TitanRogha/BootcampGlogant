@@ -14,7 +14,7 @@ public class BaseTests {
 
     @BeforeSuite(alwaysRun = true)
     @Parameters({"browser"})
-    public void beforeSuite(String browser) throws InterruptedException {
+    public void beforeSuite(String browser)  {
         myDriver = new MyDriver(browser);
         espnHomePage = new EspnHomePage(myDriver.getDriver());
     }
