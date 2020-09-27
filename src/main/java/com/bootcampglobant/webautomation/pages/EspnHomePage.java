@@ -16,13 +16,7 @@ public class EspnHomePage extends BasePage{
     public EspnHomePage(WebDriver driver) {
         super(driver);
         driver.get("https://www.espn.com.co/?src=com");
-
-
-
-        By iframe = By.id("google_ads_iframe_/21783347309/espn.latam.co/frontpage/index_1");
-        WebDriverWait wait = new WebDriverWait(driver, 20);
-        wait.until(ExpectedConditions.presenceOfElementLocated(iframe));
-        wait.until(ExpectedConditions.elementToBeClickable(loginButtonHomePage));
+        waitForPresenceOfElementLocated(By.id("google_ads_iframe_/21783347309/espn.latam.co/frontpage/index_1"));
         driver.switchTo().frame("google_ads_iframe_/21783347309/espn.latam.co/frontpage/index_1");
         closeFrame.click();
         driver.switchTo().defaultContent();
@@ -30,6 +24,9 @@ public class EspnHomePage extends BasePage{
 
     @FindBy(css = "#sideLogin-left-rail button:last-child")
     private WebElement loginButtonHomePage;
+
+    @FindBy(css = "#sideLogin-left-rail h1 + button")
+    private WebElement singUpButtonHomePage;
 
     @FindBy(css= "#overlaybg p a")
     private WebElement closeFrame;
@@ -40,5 +37,9 @@ public class EspnHomePage extends BasePage{
         return new LoginPage(getDriver());
     }
 
+    public SignUpPage searchSignUp()  {
+        singUpButtonHomePage.click();
+        return new SignUpPage(getDriver());
+    }
 
 }

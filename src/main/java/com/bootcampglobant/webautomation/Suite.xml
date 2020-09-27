@@ -4,7 +4,7 @@
     <parameter name="browser" value="chrome" />
     <test name="My first test">
         <classes>
-            <class name="com.bootcampglobant.webautomation.tests.LoginTests"></class>
+            <class name="com.bootcampglobant.webautomation.tests.SignUpTests"></class>
         </classes>
     </test>
 </suite>

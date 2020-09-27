@@ -32,7 +32,7 @@ public class LoginPage extends BasePage{
     private WebElement accountManagement;
 
 
-    public LoggedHomePage login(String username,String password) throws InterruptedException {
+    public LoggedHomePage login(String username,String password) {
 
         waitForPresenceOfElementLocated(By.id("disneyid-iframe"));
         getDriver().switchTo().frame("disneyid-iframe");
