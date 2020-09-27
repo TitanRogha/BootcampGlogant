@@ -1,10 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="My test suite" verbose="1" parallel="none" thread-count="1">
+<suite name="My test suite" verbose="1" parallel="none" thread-count="1" >
     <parameter name="browser" value="chrome" />
-    <test name="My first test">
+    <test name="Login Test" preserve-order="true">
         <classes>
-            <class name="com.bootcampglobant.webautomation.tests.SignUpTests"></class>
+            <class name="com.bootcampglobant.webautomation.tests.LogoutTests"></class>
         </classes>
     </test>
+
+
 </suite>

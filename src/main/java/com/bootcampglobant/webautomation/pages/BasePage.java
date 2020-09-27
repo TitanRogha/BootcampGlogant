@@ -1,6 +1,7 @@
 package com.bootcampglobant.webautomation.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -21,9 +22,9 @@ public abstract class BasePage {
     }
 
     public void dispose() {
-        if (driver != null) {
+
             driver.quit();
-        }
+
     }
 
     public void waitForElementToBeVisible(final WebElement element) {
@@ -33,5 +34,28 @@ public abstract class BasePage {
     public void waitForPresenceOfElementLocated(final By element) {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.presenceOfElementLocated(element));
+    }
+
+    public void waitForElementToBeClickable(final WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public Boolean isDisplayed(WebElement element) {
+
+        Boolean passFail = false;
+
+        try {
+            if (element.isDisplayed())
+                passFail = true;
+        } catch (NullPointerException | NoSuchElementException e) {
+            System.err.println("Unable to locate element '"  + "'");
+        } catch (Exception e) {
+            System.err.println("Unable to check display status of element '" + "'");
+            e.printStackTrace();
+        }
+
+        return passFail;
+
     }
 }

@@ -1,10 +1,9 @@
 package com.bootcampglobant.webautomation.tests;
 
-import com.bootcampglobant.webautomation.pages.BasePage;
+
 import com.bootcampglobant.webautomation.pages.EspnHomePage;
 import com.bootcampglobant.webautomation.pages.LoggedHomePage;
 import com.bootcampglobant.webautomation.pages.SignUpPage;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

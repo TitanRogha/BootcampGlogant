@@ -22,12 +22,22 @@ public class LoggedHomePage extends BasePage{
     @FindBy(id="global-user-trigger")
     private WebElement accountManagement;
 
+    @FindBy(css=" .account-management li:last-child a")
+    private WebElement logoutButton;
+
+
 
     public String getWelcomeMessage() {
-
-        accountManagement.click();;
-
+        accountManagement.click();
         return welcomeMessage.getText();
+    }
+
+    public EspnHomePage logout() {
+        waitForElementToBeVisible(accountManagement);
+        accountManagement.click();
+        waitForElementToBeVisible(logoutButton);
+        logoutButton.click();
+        return new EspnHomePage(getDriver());
     }
 
 
