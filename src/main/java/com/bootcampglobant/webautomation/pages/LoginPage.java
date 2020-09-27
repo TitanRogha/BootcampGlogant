@@ -1,22 +1,21 @@
 package com.bootcampglobant.webautomation.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 public class LoginPage extends BasePage{
 
     public LoginPage(WebDriver driver) {
         super(driver);
-        By iframe = By.id("disneyid-iframe");
-        WebDriverWait wait = new WebDriverWait(driver, 20);
-        wait.until(ExpectedConditions.presenceOfElementLocated(iframe));
-        driver.switchTo().frame("disneyid-iframe");
-    };
-
+    }
     @FindBy(css = ".field-username-email label span input:only-child")
     private WebElement userName;
 
@@ -29,13 +28,21 @@ public class LoginPage extends BasePage{
     @FindBy(id = "#did-iu")
     private WebElement loginForm;
 
-    public LoginPage login(String username,String password) throws InterruptedException {
+    @FindBy(id="global-user-trigger")
+    private WebElement accountManagement;
 
+
+    public LoggedHomePage login(String username,String password) throws InterruptedException {
+
+        waitForPresenceOfElementLocated(By.id("disneyid-iframe"));
+        getDriver().switchTo().frame("disneyid-iframe");
         userName.sendKeys(username);
         passWord.sendKeys(password);
         signInButton.click();
+        waitForElementToBeVisible(accountManagement);
 
-        return new LoginPage(getDriver());
+
+        return new LoggedHomePage(getDriver());
     }
 
 
