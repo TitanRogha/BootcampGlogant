@@ -28,20 +28,20 @@ public abstract class BasePage {
     }
 
     public void waitForElementToBeVisible(final WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, 50);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
     public void waitForPresenceOfElementLocated(final By element) {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, 50);
         wait.until(ExpectedConditions.presenceOfElementLocated(element));
     }
 
     public void waitForElementToBeClickable(final WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, 50);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public Boolean isDisplayed(WebElement element) {
+    public Boolean isDisplayedOwn(WebElement element) {
 
         Boolean passFail = false;
 

@@ -39,8 +39,6 @@ public class EspnHomePage extends BasePage{
     @FindBy(css= "#overlaybg p a")
     private WebElement closeFrame;
 
-
-
     @FindBy(css=".display-user span")
     private WebElement welcomeMessage;
 
@@ -61,7 +59,7 @@ public class EspnHomePage extends BasePage{
     public Boolean checkIfIsLoggedOut() {
         waitForElementToBeVisible(accountManagement);
         accountManagement.click();
-        return isDisplayed(welcomeMessage);
+        return isDisplayedOwn(welcomeMessage);
     }
 
 }

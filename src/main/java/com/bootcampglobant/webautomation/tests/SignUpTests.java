@@ -13,7 +13,7 @@ public class SignUpTests extends BaseTests {
     public void successfulSignUp(){
         EspnHomePage home = getEspnHomePage();
         SignUpPage signUpPage = home.searchSignUp();
-        LoggedHomePage loggedHomePage = signUpPage.signUp("Esteban","Castillo","algohaha@hotmail.com","Luis1711*");
+        LoggedHomePage loggedHomePage = signUpPage.signUp("Esteban","Castillo","algohaha2@hotmail.com","Luis1711*");
         Assert.assertEquals(loggedHomePage.getWelcomeMessage(), "Esteban!");
     }
 

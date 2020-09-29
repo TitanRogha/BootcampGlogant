@@ -34,6 +34,9 @@ public class LoginPage extends BasePage{
     @FindBy(id="disneyid-iframe")
     private WebElement disneyIframe;
 
+    @FindBy(css=".main section h2")
+    private WebElement accountDisabled;
+
 
     public LoggedHomePage login(String username,String password) {
 
@@ -42,11 +45,14 @@ public class LoginPage extends BasePage{
         userName.sendKeys(username);
         passWord.sendKeys(password);
         signInButton.click();
+        getDriver().switchTo().defaultContent();
         waitForElementToBeVisible(accountManagement);
-
-
         return new LoggedHomePage(getDriver());
     }
 
+
+    public String getAccountDisableMessage() {
+        return accountDisabled.getText();
+    }
 
 }

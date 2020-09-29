@@ -30,7 +30,8 @@ public class BaseTests {
 
 
     @AfterClass(alwaysRun = true)
-    public void afterClass(){ espnHomePage.dispose();
+    public void afterClass(){
+    espnHomePage.dispose();
     }
 
 

@@ -26,6 +26,10 @@ public class LoggedHomePage extends BasePage{
     private WebElement logoutButton;
 
 
+    @FindBy(css="a~div div .account-management li:nth-child(3)")
+    private WebElement profile;
+
+
 
     public String getWelcomeMessage() {
         accountManagement.click();
@@ -40,5 +44,12 @@ public class LoggedHomePage extends BasePage{
         return new EspnHomePage(getDriver());
     }
 
+    public UpdateProfilePage searchProfileOption() {
+        waitForElementToBeVisible(accountManagement);
+        accountManagement.click();
+        waitForElementToBeVisible(profile);
+        profile.click();
+        return new UpdateProfilePage(getDriver());
+    }
 
 }

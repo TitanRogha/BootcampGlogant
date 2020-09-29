@@ -6,6 +6,8 @@
         <classes>
             <class name="com.bootcampglobant.webautomation.tests.LoginTests"></class>
             <class name="com.bootcampglobant.webautomation.tests.LogoutTests"></class>
+            <class name="com.bootcampglobant.webautomation.tests.SignUpTests"></class>
+            <class name="com.bootcampglobant.webautomation.tests.DeleteAccountTests"></class>
         </classes>
     </test>
 
