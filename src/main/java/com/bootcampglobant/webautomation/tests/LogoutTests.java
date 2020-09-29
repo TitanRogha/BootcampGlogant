@@ -14,9 +14,9 @@ public class LogoutTests extends BaseTests {
     public void successfulLogout() {
         EspnHomePage home = getEspnHomePage();
         LoginPage loginPage = home.searchLogin();
-        LoggedHomePage loggedHomePage = loginPage.login("luchocd27@hotmail.com", "Luis3005*");
+        LoggedHomePage loggedHomePage = loginPage.login("luchocd27@hotmail.com", "6yh8mR9xqW4586q4");
         EspnHomePage home2 = loggedHomePage.logout();
-        Assert.assertTrue(home2.checkIfIsLoggedOut());
+        Assert.assertFalse(home2.checkIfIsLoggedOut());
 
     }
 }

@@ -14,7 +14,7 @@ public class MyDriver {
                 driver = new FirefoxDriver();
                 break;
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", "/Users/lucho/Documents/chromedriver/chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "/Users/Luis Castillo Díaz/Documents/chromedriver.exe");
                 driver = new ChromeDriver();
                 driver.manage().window().maximize();
                 break;

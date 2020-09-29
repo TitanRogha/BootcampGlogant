@@ -31,11 +31,14 @@ public class LoginPage extends BasePage{
     @FindBy(id="global-user-trigger")
     private WebElement accountManagement;
 
+    @FindBy(id="disneyid-iframe")
+    private WebElement disneyIframe;
+
 
     public LoggedHomePage login(String username,String password) {
 
-        waitForPresenceOfElementLocated(By.id("disneyid-iframe"));
-        getDriver().switchTo().frame("disneyid-iframe");
+        waitForElementToBeVisible(disneyIframe);
+        getDriver().switchTo().frame(disneyIframe);
         userName.sendKeys(username);
         passWord.sendKeys(password);
         signInButton.click();
